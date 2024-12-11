@@ -93,7 +93,7 @@ const Footer = () => {
             <div key={index} className="flex flex-col gap-6 sm:gap-8">
               <SectionTitle>{section.title}</SectionTitle>
               {section.doubleColumn ? (
-                <div className="flex flex-col xl:flex-row gap-8 flex-shrink-0">
+                <div className="flex flex-col 3xl:flex-row gap-8 flex-shrink-0">
                   {section.lists.map((list, listIndex) => (
                     <ul key={listIndex} className="text-[#D7D7D7] text-base sm:text-lg lg:text-xl leading-8 lg:leading-10 px-0">
                       {list.map((item, itemIndex) => (

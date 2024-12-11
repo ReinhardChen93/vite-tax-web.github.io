@@ -49,8 +49,8 @@ export default function ReservationForm() {
   }
 
   return (
-    <FormContainer className="p-5 md:p-10 lg:p-16 xl:px-[16.25rem] xl:py-[12.125rem] bg-blueSsecondary relative">
-      <Card className="rounded-lg shadow-lg bg-gradient-to-br from-taxPrimary to-taxPrimary/90 backdrop-blur-sm">
+    <FormContainer className="p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] xl:py-[12.125rem] bg-blueSsecondary relative">
+      <Card className="rounded-none shadow-lg bg-gradient-to-br from-taxPrimary to-taxPrimary/90 backdrop-blur-sm">
         <CardContent className="p-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -65,7 +65,6 @@ export default function ReservationForm() {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-0 bg-white/10 text-white placeholder:text-gray-300 focus:bg-white/20 transition-all duration-300 rounded-md"
                           placeholder="请输入姓名"
                           {...field}
                         />
@@ -85,7 +84,7 @@ export default function ReservationForm() {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-0 bg-white/10 text-white placeholder:text-gray-300 focus:bg-white/20 transition-all duration-300 rounded-md"
+                          
                           placeholder="请输入邮箱"
                           {...field}
                         />
@@ -105,7 +104,7 @@ export default function ReservationForm() {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-0 bg-white/10 text-white placeholder:text-gray-300 focus:bg-white/20 transition-all duration-300 rounded-md"
+                          
                           placeholder="请输入联系电话"
                           {...field}
                         />
@@ -125,7 +124,7 @@ export default function ReservationForm() {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-0 bg-white/10 text-white placeholder:text-gray-300 focus:bg-white/20 transition-all duration-300 rounded-md"
+                         
                           placeholder="请输入业务范围"
                           {...field}
                         />
@@ -147,7 +146,7 @@ export default function ReservationForm() {
                     <FormControl>
                       <Textarea
                         placeholder="请输入留言内容"
-                        className="resize-none border-0 bg-white/10 text-white placeholder:text-gray-300 focus:bg-white/20 transition-all duration-300 rounded-md"
+                        className="border-l-0 border-r-0 border-t-0 border-b-[1px]"
                         rows={4}
                         {...field}
                       />
@@ -161,7 +160,7 @@ export default function ReservationForm() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-taxSecondary hover:bg-[#d4b274] text-taxPrimary transition-colors duration-300 min-w-[160px] font-medium shadow-md hover:shadow-lg"
+                  className="bg-taxSecondary font-bold rounded-none hover:bg-[#d4b274] text-taxPrimary transition-colors duration-300 min-w-[160px] shadow-md hover:shadow-lg"
                 >
                   立即预约
                 </Button>

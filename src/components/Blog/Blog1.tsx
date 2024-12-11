@@ -103,7 +103,7 @@ const NumberBox: React.FC<NumberBoxProps> = ({ number, content, bgColor }) => (
 
 const Blog1: React.FC = () => {
   return (
-    <div className="relative p-5 md:p-10 lg:p-16 xl:px-[16.25rem] xl:py-[12.125rem] bg-taxPrimary">
+    <div className="relative p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] xl:py-[12.125rem] bg-taxPrimary">
       <div className="flex flex-col items-center gap-y-4 w-full 
         sm:gap-y-5
         lg:flex-row lg:gap-x-8 lg:items-stretch"

@@ -11,12 +11,12 @@ import { useNavigate, Link } from "react-router-dom";
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, url, title, children, ...props }, ref) => {
+>(({ className, href, title, children, ...props }, ref) => {
   return (
     <li className="hover:underline text-taxSecondary">
       <NavigationMenuLink asChild>
         <Link
-          to={props.url}
+          to={href}
           ref={ref}
           className={cn(
             "select-none space-y-1 leading-none no-underline outline-none transition-colors ",
@@ -40,9 +40,9 @@ ListItem.displayName = "ListItem";
 export default function DesktopMenu({ menu }) {
   let navigate = useNavigate();
   const hasSubMenu = menu.subMenu?.length > 0;
-  const pageGo = (url) => {
-    console.log("url", url);
-    navigate(url)
+  const pageGo = (href) => {
+    if (href)
+      navigate(href)
   };
 
   return (
@@ -57,8 +57,8 @@ export default function DesktopMenu({ menu }) {
               {menu.subMenu.map((submenu, i) => (
                 <ListItem
                   key={i}
-                  url={submenu.url}
-                  onClick={() => pageGo(submenu.url)}
+                  href={submenu.href}
+                // onClick={() => pageGo(submenu.href)}
                 >
                   {submenu.name}
                 </ListItem>
@@ -73,7 +73,7 @@ export default function DesktopMenu({ menu }) {
             "text-[1.375rem] hover:text-taxSecondary hover:bg-none bg-transparent"
           )}
         >
-          <div onClick={() => pageGo(menu.url)}>{menu.name}</div>
+          <Link to={menu.href}>{menu.name}</Link>
         </NavigationMenuLink>
       )}
     </NavigationMenuItem>

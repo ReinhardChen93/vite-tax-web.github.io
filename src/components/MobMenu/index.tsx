@@ -24,11 +24,11 @@ export default function MobMenu({ Menus }) {
     },
   };
 
-  const handlerMenuClick = (url) => {
-    
-    if (url) {
+  const handlerMenuClick = (href: string) => {
+    console.log('href', href)
+    if (href) {
       setOpen(false);
-      navigate(url);
+      navigate(href);
     }
 
   };
@@ -46,7 +46,7 @@ export default function MobMenu({ Menus }) {
       >
         <div className="flex flex-col justify-between h-full py-10 pb-20">
           <ul >
-            {Menus.map(({ name, subMenu, url }, i) => {
+            {Menus.map(({ name, subMenu, href }, i) => {
               const isClicked = clicked === i;
               const hasSubMenu = subMenu?.length;
               return (
@@ -56,7 +56,7 @@ export default function MobMenu({ Menus }) {
                     className="flex w-full pb-5 justify-between text-[1.375rem]  hover:text-taxSecondary"
                     onClick={() => {
                       setClicked(isClicked ? null : i)
-                      handlerMenuClick(url)
+                      handlerMenuClick(href)
                     }}
                   >
                     {name}
@@ -75,10 +75,10 @@ export default function MobMenu({ Menus }) {
                       className={`${isClicked ? "border-t-2 border-b-2" : ""
                         } border-[#4E555F]`}
                     >
-                      {subMenu.map(({ name, icon: Icon, url }) => (
+                      {subMenu.map(({ name, icon: Icon, href }) => (
                         <li
                           key={name}
-                          onClick={() => handlerMenuClick(url)}
+                          onClick={() => handlerMenuClick(href)}
                           className="py-4 flex-center text-white hover:text-taxSecondary  gap-x-2 cursor-pointer text-[1.375rem]"
                         >
                           {name}

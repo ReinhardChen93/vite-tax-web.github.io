@@ -7,6 +7,7 @@ const Service = lazy(() => import('@/pages/servicePage'));
 const NotFound = lazy(() => import('@/pages/404'));
 const InternationalTaxation = lazy(() => import('@/pages/servicePage/internationalTaxation.tsx'));
 const LawCase = lazy(() => import('@/pages/LawCase'));
+const ContactUs = lazy(() => import('@/pages/ContactUs'))
 
 export const routes: RouteObject[] = [
   {
@@ -31,6 +32,10 @@ export const routes: RouteObject[] = [
   {
     path: 'lawCase/:id',
     element: <LawCase />
+  },
+  {
+    path: 'contactUs',
+    element: <ContactUs />
   },
   {
     path: '*',

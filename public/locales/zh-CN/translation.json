@@ -22,5 +22,14 @@
     "back": "返回",
     "forward": "前进",
     "view_case_result": "查看案例结果"
+  },
+  "contact": {
+    "title": "联系我们",
+    "name": "姓名",
+    "email": "邮箱",
+    "phone": "电话",
+    "service": "服务类型",
+    "message": "留言",
+    "submit": "提交"
   }
 }

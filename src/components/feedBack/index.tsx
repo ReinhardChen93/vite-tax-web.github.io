@@ -23,7 +23,7 @@ const FeedBack = () => {
     },
   ];
   return (
-    <div className="relative min-h-screen p-5 md:p-10 lg:p-16 xl:px-[16.25rem] xl:py-[12.125rem] bg-taxPrimary">
+    <div className="relative min-h-screen p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] xl:py-[12.125rem] bg-taxPrimary">
       <div className="lg:text-[2.813rem] text-3xl font-black tracking-wide text-center mb-12">
         <span className="relative">
           客户反馈
@@ -34,7 +34,7 @@ const FeedBack = () => {
       <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
         {testimonials.map((testimonial, index) => (
           <div className="lg:w-1/3 w-full" key={index}>
-            <div className="bg-gradient-to-br from-[#2D3642] to-[#1F2937] rounded-xl lg:p-8 p-6 h-full relative shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/30 hover:border-gray-600/50 group">
+            <div className="bg-gradient-to-br from-[#2D3642] to-[#1F2937]  lg:p-8 p-6 h-full relative shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/30 hover:border-gray-600/50 group">
               <div className="flex flex-col">
                 {/* Profile section */}
                 <div className="flex items-center mt-auto border-b border-gray-700/30 pb-4 lg:pb-6">

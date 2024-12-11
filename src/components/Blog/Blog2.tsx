@@ -49,7 +49,7 @@ const Blog2 = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 sm:p-5 md:p-10 lg:p-16 xl:px-[16.25rem] xl:py-[12.125rem] bg-blueSsecondary">
+    <div className="min-h-screen p-4 sm:p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] xl:py-[12.125rem] bg-blueSsecondary">
       <div className="flex md:justify-between flex-col items-stretch mb-6 md:mb-8 lg:mb-[2.813rem]">
         <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-[4.625rem]">
           <div className="text-xl sm:text-2xl md:text-3xl lg:text-[2.813rem]">服务项目</div>

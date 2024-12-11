@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     {
       name: t('nav.home'),
       gridCols: 2,
-      url: '/'
+      href: '/'
     },
     {
       name: t('nav.about'),
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
           name: 'internationalTaxation',
           desc: 'Responsive design',
           // icon: PanelsTopLeft,
-          url: '/service/internationalTaxation'
+          href: '/service/internationalTaxation'
         },
         {
           name: 'Management',
@@ -77,12 +77,13 @@ const Navbar: React.FC = () => {
     {
       name: t('nav.contact'),
       gridCols: 2,
+      href: 'contactUs'
     },
   ];
 
   return (
     <Suspense fallback="Loading...">
-      <header className="box-border h-fit text-[0.9375rem] absolute z-[2] inset-0 flex-col mx-5 md:mx-10 lg:mx-16 xl:mx-[16.25rem] ">
+      <header className="box-border h-fit text-[0.9375rem] absolute z-[2] inset-0 flex-col mx-5 md:mx-10 lg:mx-16 3xl:mx-[16.25rem] ">
         <div className="flex-center-between lg:py-10 py-5 border-[#4E555f] border-b-2">
           <div className="flex-center gap-x-10 xs:gap-x-4">
             <div className="lg:hidden">
@@ -121,7 +122,7 @@ const Navbar: React.FC = () => {
             ))}
 
           </NavigationMenuList>
-          <div className="2xl:flex-center gap-x-5 hidden">
+          <div className="3xl:flex-center gap-x-5 hidden">
             <div className="flex">
               <div className="flex mr-[2.875rem]">
                 <div className="border-2 border-taxSecondary w-[3.875rem] h-[3.875rem] flex items-center justify-center rounded-full">

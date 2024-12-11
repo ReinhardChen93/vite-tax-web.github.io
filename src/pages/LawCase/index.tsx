@@ -1,8 +1,5 @@
 import AnimationRevealPage from "@/components/helpers/AnimationRevealPage";
-import BannerBg from "@/assets/images/Service/Banner.png";
-import TitleIcon from "@/assets/images/Service/TitleIcon.png";
-
-import styled from "styled-components";
+import HeaderBox from '@/components/HeaderBox';
 
 import Case1 from '@/assets/images/Service/case1.png';
 
@@ -10,18 +7,8 @@ import { CaseDetails } from "./components/CaseDetails";
 import { Statistics } from "./components/Statistics";
 import Description from "./components/Description";
 
-
-interface HeaderBoxProps {
-  src: string;
-}
-
 export default function LawCasePage() {
-  const HeaderBox = styled.div<HeaderBoxProps>`
-  background-image: url("${(props) => props.src}");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
+
 
   const caseDetails = {
     clientName: "Robert Symon",
@@ -35,23 +22,7 @@ export default function LawCasePage() {
 
   return (
     <AnimationRevealPage>
-      <HeaderBox
-        className="w-full h-56 sm:h-[43.563rem]  flex flex-col justify-end"
-        src={BannerBg}
-      >
-        <div className="flex h-full flex-col justify-end items-center space-y-4 pb-5 sm:pb-32">
-          {/* 标题文字 - 添加响应式字体大小 */}
-          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            国际税务
-          </div>
-
-          {/* 装饰线条 - 添加响应式大小 */}
-          <img
-            className="w-[4rem] sm:w-[4.5rem] md:w-[5rem] lg:w-[5.938rem] h-[2rem] sm:h-[2.25rem] md:h-[2.5rem] lg:h-[2.75rem]"
-            src={TitleIcon}
-          />
-        </div>
-      </HeaderBox>
+      <HeaderBox title="国际税务"/>
       <div className="custom-container">
         <img className="w-full h-auto mb-14" src={Case1} />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

@@ -90,7 +90,11 @@
   }
 
   .custom-container {
-    @apply relative p-5 md:p-10 lg:p-16 xl:px-[16.25rem] ;
+    @apply relative p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] ;
+  }
+
+  .form-floating-label {
+    @apply absolute text-white transition-all duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0];
   }
 }
 

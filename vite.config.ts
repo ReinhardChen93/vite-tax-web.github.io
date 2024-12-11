@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import tsConfigPaths from 'vite-tsconfig-paths';
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
@@ -10,7 +10,14 @@ function _resolve(dir: string) {
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: [
+          ['babel-plugin-styled-components', { displayName: true }],
+          "babel-plugin-macros"
+        ],
+      },
+    }),
     tsConfigPaths(),
   ],
   resolve: {

@@ -25,6 +25,14 @@
     "back": "Back",
     "forward": "Forward",
     "view_case_result": "View Case Result"
-    
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "Service",
+    "message": "Message",
+    "submit": "Submit"
   }
 }

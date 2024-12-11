@@ -54,7 +54,7 @@ const Banner: React.FC = () => {
         <CarouselContent>
           <CarouselItem>
             <HeaderBox
-              className="relative flex flex-col justify-center box-border w-full min-h-[25.9375rem] md:min-h-screen p-5 md:p-10 lg:p-16 xl:px-[16.25rem] "
+              className="relative flex flex-col justify-center box-border w-full min-h-[25.9375rem] md:min-h-screen p-5 md:p-10 lg:p-16 3xl:px-[16.25rem] "
               src={Banner_home}
             >
               <div className="box-border w-full h-full flex flex-col justify-center">
