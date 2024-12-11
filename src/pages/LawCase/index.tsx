@@ -1,6 +1,6 @@
 import AnimationRevealPage from "@/components/helpers/AnimationRevealPage";
 import HeaderBox from '@/components/HeaderBox';
-
+import BlogCard from '@/components/BlogCard';
 import Case1 from '@/assets/images/Service/case1.png';
 
 import { CaseDetails } from "./components/CaseDetails";
@@ -8,7 +8,25 @@ import { Statistics } from "./components/Statistics";
 import Description from "./components/Description";
 
 export default function LawCasePage() {
-
+  // 首先定义博客卡片数据数组
+  const blogCards = [
+    {
+      date: "18-08-2020",
+      title: "移民前税务筹划",
+      description: "There are of Lorem Ipsum available, but majority have su alteration in some form, by injected air which don't look even slightly believable.",
+      imageUrl: Case1,
+      className: " bg-blueSsecondary",
+      url: '/lawCase/:14367'
+    },
+    {
+      date: "18-08-2020",
+      title: "移民前税务筹划",
+      description: "There are of Lorem Ipsum available, but majority have su alteration in some form, by injected air which don't look even slightly believable.",
+      imageUrl: Case1,
+      className: " bg-blueSsecondary",
+      url: '/lawCase/:14367'
+    }
+  ]
 
   const caseDetails = {
     clientName: "Robert Symon",
@@ -22,10 +40,10 @@ export default function LawCasePage() {
 
   return (
     <AnimationRevealPage>
-      <HeaderBox title="国际税务"/>
+      <HeaderBox title="国际税务" />
       <div className="custom-container">
         <img className="w-full h-auto mb-14" src={Case1} />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
           <div className="lg:col-span-8">
             <Description
               title='案例概览'
@@ -70,13 +88,27 @@ export default function LawCasePage() {
             <Description
               title='总结'
               content="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring interoperable internal or “organic” sources."
-              
+
             />
           </div>
           <div className="lg:col-span-4">
             <CaseDetails caseDetails={caseDetails} />
             <Statistics />
           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 ">
+          {/* 使用 map 方法渲染卡片 */}
+          {blogCards.map((card, index) => (
+            <BlogCard
+              key={index}
+              date={card.date}
+              title={card.title}
+              description={card.description}
+              imageUrl={card.imageUrl}
+              className={card.className}
+              url={card.url}
+            />
+          ))}
         </div>
       </div>
 

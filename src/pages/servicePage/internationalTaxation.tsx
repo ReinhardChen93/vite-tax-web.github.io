@@ -3,7 +3,7 @@ import AnimationRevealPage from "@/components/helpers/AnimationRevealPage";
 import BannerBg from "@/assets/images/Service/Banner.png";
 import TitleIcon from "@/assets/images/Service/TitleIcon.png";
 import BusinessIntro from "./components/BusinessIntro";
-import BlogCard from "./components/BlogCard";
+import BlogCard from "@/components/BlogCard";
 import TrustServices from './components/TrustServices';
 import Case1 from '@/assets/images/Service/case1.png';
 

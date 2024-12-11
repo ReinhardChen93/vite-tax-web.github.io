@@ -29,7 +29,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   return (
     <Card
       className={cn(
-        "group overflow-hidden transition-all duration-300 hover:shadow-xl bg-gradient-to-b from-gray-900 to-gray-800 ",
+        "rounded-none group overflow-hidden transition-all duration-300 hover:shadow-xl bg-gradient-to-b from-gray-900 to-gray-800 ",
         "transform hover:-translate-y-1 hover:scale-[1.02]",
         className
       )}
