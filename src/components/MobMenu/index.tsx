@@ -1,5 +1,4 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useContext } from "@radix-ui/react-dialog"
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import Email from "@/assets/Icon/email.svg";
@@ -7,10 +6,15 @@ import Phone from "@/assets/Icon/phone.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import type { MenuItemType } from '@/components/Navbar';
 
-export default function MobMenu({ Menus }) {
-  const [clicked, setClicked] = useState(null);
+interface MobMenuProps {
+  Menus: MenuItemType[]
+}
+
+const MobMenu: React.FC<MobMenuProps> = ({ Menus }) => {
+  const [clicked, setClicked] = useState<number | boolean | null>(null);
   const [open, setOpen] = useState(false)
   const navigate = useNavigate();
   const subMenuDrawer = {
@@ -25,7 +29,6 @@ export default function MobMenu({ Menus }) {
   };
 
   const handlerMenuClick = (href: string) => {
-    console.log('href', href)
     if (href) {
       setOpen(false);
       navigate(href);
@@ -75,7 +78,7 @@ export default function MobMenu({ Menus }) {
                       className={`${isClicked ? "border-t-2 border-b-2" : ""
                         } border-[#4E555F]`}
                     >
-                      {subMenu.map(({ name, icon: Icon, href }) => (
+                      {subMenu.map(({ name, icon, href }) => (
                         <li
                           key={name}
                           onClick={() => handlerMenuClick(href)}
@@ -129,3 +132,5 @@ export default function MobMenu({ Menus }) {
     </Sheet>
   );
 }
+
+export default MobMenu

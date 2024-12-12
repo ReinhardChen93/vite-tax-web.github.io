@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
-const APP_NAME = 'vite-react-tailwind-starter';
+const APP_NAME = '诺成财富';
 
 export const Meta = () => {
   return (
     <Helmet>
-      <title>Vite React Tailwind Starter</title>
-      <meta name="description" content="Vite React Tailwind Starter Template" />
+      <title>Essence Wealth</title>
+      <meta name="description" content="Essence Wealth" />
 
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />

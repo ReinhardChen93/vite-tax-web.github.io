@@ -30,11 +30,13 @@ export const useDotButton = (
   )
 
   const onInit = useCallback((emblaApi: CarouselApi) => {
-    setScrollSnaps(emblaApi.scrollSnapList())
+    if (emblaApi)
+      setScrollSnaps(emblaApi.scrollSnapList())
   }, [])
 
   const onSelect = useCallback((emblaApi: CarouselApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap())
+    if (emblaApi)
+      setSelectedIndex(emblaApi.selectedScrollSnap())
   }, [])
 
   useEffect(() => {

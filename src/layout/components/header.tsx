@@ -1,4 +1,4 @@
-import { ThemeToggle } from '@/lib/components/theme-toggle';
+import { ThemeToggle } from '@/components/theme-toggle';
 import Navbar from '@/components/Navbar';
 export const Header = () => {
   return (

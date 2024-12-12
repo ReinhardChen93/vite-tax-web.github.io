@@ -3,10 +3,8 @@ import react from '@vitejs/plugin-react'
 import tsConfigPaths from 'vite-tsconfig-paths';
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
-import path from 'path'
-function _resolve(dir: string) {
-  return path.resolve(__dirname, dir)
-}
+import { resolve } from 'path';
+
 
 export default defineConfig({
   plugins: [
@@ -22,8 +20,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': _resolve('src'), // 配置别名
-    },
+      '@': resolve(__dirname, './src'),
+      'react': resolve(__dirname, 'node_modules/react'),
+      'react-dom': resolve(__dirname, 'node_modules/react-dom'),
+      '/public': '/public'
+    }
   },
   css: {
     postcss: {
@@ -33,4 +34,13 @@ export default defineConfig({
       ],
     },
   },
+  server: { 
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Suspense } from 'react';
@@ -10,10 +11,26 @@ import { Button } from "@/components/ui/button";
 import DesktopMenu from '../DesktopMenu';
 import MobMenu from '../MobMenu';
 
+// 定义子菜单项的类型
+export interface SubMenuItemType {
+  name: string;
+  desc: string;
+  // 如果需要图标，可以添加这一行，并确保图标类型被正确定义
+  icon?: ReactNode;
+  href?: string; // 可选的 href 属性，用于链接到特定页面
+}
 
+// 定义主菜单项的类型，包括子菜单（如果有的话）
+export interface MenuItemType {
+  name: string;
+  gridCols: number;
+  href?: string; // 可选的 href 属性，用于链接到特定页面
+  subMenuHeading?: string[]; // 可选的子菜单标题数组（尽管这里只使用了两次，但保留为数组形式以便扩展）
+  subMenu?: SubMenuItemType[]; // 可选的子菜单项数组
+}
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const Menus = [
+  const Menus: MenuItemType[] = [
     {
       name: t('nav.home'),
       gridCols: 2,

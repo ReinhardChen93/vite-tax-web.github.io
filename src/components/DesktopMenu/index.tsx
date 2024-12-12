@@ -8,6 +8,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/utils/utils";
 import { useNavigate, Link } from "react-router-dom";
+import type { MenuItemType } from '@/components/Navbar';
+
+
+
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
@@ -37,10 +41,17 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-export default function DesktopMenu({ menu }) {
-  let navigate = useNavigate();
-  const hasSubMenu = menu.subMenu?.length > 0;
-  const pageGo = (href) => {
+interface DesktopMenuProps {
+  menu: MenuItemType
+}
+
+const DesktopMenu: React.FC<DesktopMenuProps> = ({ menu }) => {
+  const navigate = useNavigate();
+
+  const hasSubMenu = Array.isArray(menu?.subMenu) && menu.subMenu.length > 0;
+
+  //* 路由跳转
+  const pageGo = (href: string) => {
     if (href)
       navigate(href)
   };
@@ -54,7 +65,7 @@ export default function DesktopMenu({ menu }) {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="top-[4rem]">
             <ul className="w-[15.625rem] bg-taxPrimary flex flex-col p-5 gap-y-5">
-              {menu.subMenu.map((submenu, i) => (
+              {menu.subMenu?.map((submenu, i) => (
                 <ListItem
                   key={i}
                   href={submenu.href}
@@ -73,9 +84,10 @@ export default function DesktopMenu({ menu }) {
             "text-[1.375rem] hover:text-taxSecondary hover:bg-none bg-transparent"
           )}
         >
-          <Link to={menu.href}>{menu.name}</Link>
+          <div onClick={() => pageGo(menu.href)}>{menu.name}</div>
         </NavigationMenuLink>
       )}
     </NavigationMenuItem>
   );
 }
+export default DesktopMenu

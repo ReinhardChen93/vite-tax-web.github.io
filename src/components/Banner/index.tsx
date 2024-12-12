@@ -44,7 +44,7 @@ const Banner: React.FC = () => {
     api,
     // 可选的点击回调
     (_api) => {
-      console.log("Dot clicked, current index:", _api.selectedScrollSnap());
+      // console.log("Dot clicked, current index:", _api.selectedScrollSnap());
     }
   );
   
