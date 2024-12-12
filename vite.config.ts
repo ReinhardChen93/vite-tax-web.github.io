@@ -7,7 +7,6 @@ import { resolve } from 'path';
 
 
 export default defineConfig({
-  base: 'vite-tax-web.github.io',
   plugins: [
     react({
       babel: {
